@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/swiftest_hip_calculator.props" />
+</Project>
