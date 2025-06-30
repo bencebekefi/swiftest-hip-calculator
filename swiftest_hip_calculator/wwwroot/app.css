@@ -90,3 +90,26 @@ button:active,
     margin-top: 25px;
     font-weight: bold;
 }
+.custom-navbar {
+    height: 80px;
+    padding: 0 2rem;
+}
+
+.navbar-brand img {
+    display: inline-block;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    padding-top: 0.25rem;
+}
+
+.nav-link:hover {
+    color: #e60073;
+}
+
+.info-icon:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+}

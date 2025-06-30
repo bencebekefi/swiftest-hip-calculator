@@ -1,5 +1,26 @@
 ﻿@inherits LayoutComponentBase
 
-<div class="main-content">
-    @Body
+<div>
+    <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm custom-navbar">
+        <div class="container-fluid d-flex align-items-center justify-content-start">
+            <a class="navbar-brand me-4" href="/">
+                <img src="Images/swiftest_logo2.png" alt="SwiftEst Logo" height="50" />
+            </a>
+            <ul class="navbar-nav d-flex flex-row">
+                <li class="nav-item me-3">
+                    <a class="nav-link fw-semibold text-dark" href="/">Home</a>
+                </li>
+                <li class="nav-item me-3">
+                    <a class="nav-link fw-semibold text-dark" href="/hipcalc">Hip Calculator</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <!-- Page Content -->
+    <div class="main-content p-3">
+        @Body
+    </div>
 </div>

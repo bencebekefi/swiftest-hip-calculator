@@ -1,29 +1,103 @@
 @page "/hipcalc"
 
+<style>
+    .custom-modal {
+        display: none;
+        position: fixed;
+        z-index: 1050;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0,0,0,0.5);
+    }
+
+    .custom-modal-content {
+        background-color: #fff;
+        margin: 10% auto;
+        padding: 20px;
+        border-radius: 8px;
+        width: 80%;
+        max-width: 500px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    }
+
+    .custom-modal .close-btn {
+        color: #aaa;
+        float: right;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .custom-modal .close-btn:hover {
+        color: black;
+    }
+</style>
+
 <div class="container mt-5">
     <div class="row justify-content-center">
+        <!-- Info Section (now on the left) -->
+        <div class="col-md-6 col-lg-5 mb-4 mb-lg-0">
+            <div class="bg-white p-4 rounded shadow-sm border">
+                <h4>What’s a Hip Roof?</h4>
+                <p>
+                    A hip roof slopes down on all four sides, creating a pyramid-like shape. 
+                    It’s commonly seen in both residential and commercial buildings.
+                </p>
+                <img src="Images/hip_roof_diagram.png" class="img-fluid mt-3" alt="Hip Roof Diagram" />
+                <p>
+                    This calculator determines the <strong>hip rafter length</strong> — the diagonal ridge that connects the roof corner to the peak. 
+                    The result is based on:
+                </p>
+                <ul>
+                    <li><strong>Roof Width</strong>: the shorter side (hip-to-hip direction)</li>
+                    <li><strong>Span (Run)</strong>: the horizontal distance from the edge to the peak</li>
+                    <li><strong>Main Pitch</strong> and <strong>Hip-End Pitch</strong>: slope angles in degrees</li>
+                </ul>
+                <p>
+                    The tool uses 3D trigonometry to calculate this diagonal length, giving you an accurate result for construction or estimation.
+                </p>
+                
+            </div>
+        </div>
+
+        <!-- Calculator Section (now on the right) -->
         <div class="col-md-6 col-lg-5">
             <div class="card shadow-sm">
                 <div class="card-body">
                     <h3 class="text-center mb-4">Hip Roof Length Calculator</h3>
 
                     <div class="form-group mb-3">
-                        <label>Building Width (m):</label>
+                        <label>
+                            Roof Width (m):
+                            <img src="Images/information.jpeg" class="ms-2" style="width: 36px; cursor: pointer;" alt="Info" onclick="openModal('widthModal')" />
+                        </label>
                         <input type="number" @bind="Width" class="form-control" />
                     </div>
 
                     <div class="form-group mb-3">
-                        <label>Roof Span (m):</label>
+                        <label>
+                            Roof Span (m):
+                            <img src="Images/information.jpeg" class="ms-2" style="width: 36px; cursor: pointer;" alt="Info" onclick="openModal('spanModal')" />
+                        </label>
                         <input type="number" @bind="Run" class="form-control" />
                     </div>
 
                     <div class="form-group mb-3">
-                        <label>Main Roof Pitch (°):</label>
+                        <label>
+                            Main Pitch (°):
+                            <img src="Images/information.jpeg" class="ms-2" style="width: 36px; cursor: pointer;" alt="Info" onclick="openModal('mainPitchModal')" />
+                        </label>
                         <input type="number" @bind="FrontBackPitch" class="form-control" />
                     </div>
 
                     <div class="form-group mb-3">
-                        <label>Hip-End Pitch (°):</label>
+                        <label>
+                            Hip-End Pitch (°):
+                            <img src="Images/information.jpeg" class="ms-2" style="width: 36px; cursor: pointer;" alt="Info" onclick="openModal('hipPitchModal')" />
+                        </label>
                         <input type="number" @bind="HipEndPitch" class="form-control" />
                     </div>
 
@@ -32,12 +106,49 @@
                     @if (HipLength > 0)
                     {
                         <div class="alert alert-success mt-4 text-center">
-                            <strong>Hip Length:</strong> @($"{HipLength:F2} m")
+                            <strong>Hip Rafter Length:</strong> @($"{HipLength:F2} m")
                         </div>
                     }
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- Custom Modals -->
+<div id="widthModal" class="custom-modal">
+    <div class="custom-modal-content">
+        <span class="close-btn" onclick="closeModal('widthModal')">&times;</span>
+        <h5>Roof Width</h5>
+        <p>This is the total width of the roof across the shorter side (hip-to-hip direction).</p>
+        <img src="Images/width_diagram.png" class="img-fluid mt-2" alt="Width" />
+    </div>
+</div>
+
+<div id="spanModal" class="custom-modal">
+    <div class="custom-modal-content">
+        <span class="close-btn" onclick="closeModal('spanModal')">&times;</span>
+        <h5>Roof Span (Run)</h5>
+        <p>The distance from the edge of the roof to the ridge (centerline). Also known as the run.</p>
+        <img src="Images/span_diagram.png" class="img-fluid mt-2" alt="Span" />
+    </div>
+</div>
+
+<div id="mainPitchModal" class="custom-modal">
+    <div class="custom-modal-content">
+        <span class="close-btn" onclick="closeModal('mainPitchModal')">&times;</span>
+        <h5>Main Roof Pitch</h5>
+        <p>The slope of the front and back roof planes. Typically steeper and longer than the hip ends.</p>
+        <img src="Images/main_pitch_visual.png" class="img-fluid mt-2" alt="Main Pitch" />
+    </div>
+</div>
+
+<div id="hipPitchModal" class="custom-modal">
+    <div class="custom-modal-content">
+        <span class="close-btn" onclick="closeModal('hipPitchModal')">&times;</span>
+        <h5>Hip-End Pitch</h5>
+        <p>The slope of the triangular ends of the hip roof. These often differ from the main pitch.</p>
+        <img src="Images/hip_pitch_diagram.png" class="img-fluid mt-2" alt="Hip Pitch" />
     </div>
 </div>
 
@@ -52,10 +163,27 @@
     {
         double halfWidth = Width / 2;
         double rise = Run * Math.Tan(DegreesToRadians(FrontBackPitch));
-
-        // 3D Pythagorean to calculate the hip rafter
         HipLength = Math.Sqrt(Math.Pow(halfWidth, 2) + Math.Pow(Run, 2) + Math.Pow(rise, 2));
     }
 
     private double DegreesToRadians(double degrees) => degrees * (Math.PI / 180);
 }
+
+<!-- JS Modal Logic -->
+<script>
+    function openModal(id) {
+        document.getElementById(id).style.display = 'block';
+    }
+
+    function closeModal(id) {
+        document.getElementById(id).style.display = 'none';
+    }
+
+    window.onclick = function (event) {
+        document.querySelectorAll('.custom-modal').forEach(modal => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    }
+</script>

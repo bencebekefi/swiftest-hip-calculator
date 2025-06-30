@@ -5,12 +5,40 @@
       "PackagePath": "staticwebassets/swiftest_hip_calculator.bundle.scp.css"
     },
     {
+      "Id": "/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/wwwroot/Images/hip_pitch_diagram.png",
+      "PackagePath": "staticwebassets/Images/hip_pitch_diagram.png"
+    },
+    {
+      "Id": "/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/wwwroot/Images/hip_roof_diagram.png",
+      "PackagePath": "staticwebassets/Images/hip_roof_diagram.png"
+    },
+    {
+      "Id": "/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/wwwroot/Images/information.jpeg",
+      "PackagePath": "staticwebassets/Images/information.jpeg"
+    },
+    {
+      "Id": "/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/wwwroot/Images/main_pitch_visual.png",
+      "PackagePath": "staticwebassets/Images/main_pitch_visual.png"
+    },
+    {
+      "Id": "/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/wwwroot/Images/span_diagram.png",
+      "PackagePath": "staticwebassets/Images/span_diagram.png"
+    },
+    {
       "Id": "/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/wwwroot/Images/swiftest_logo2.png",
       "PackagePath": "staticwebassets/Images/swiftest_logo2.png"
     },
     {
+      "Id": "/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/wwwroot/Images/width_diagram.png",
+      "PackagePath": "staticwebassets/Images/width_diagram.png"
+    },
+    {
       "Id": "/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/wwwroot/app.css",
       "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/wwwroot/bootstrap/bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.bundle.min.js"
     },
     {
       "Id": "/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/wwwroot/bootstrap/bootstrap.min.css",
