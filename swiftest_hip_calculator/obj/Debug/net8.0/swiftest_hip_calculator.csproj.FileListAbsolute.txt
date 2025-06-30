@@ -19,7 +19,6 @@
 /Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.swiftest_hip_calculator.props
 /Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/obj/Debug/net8.0/staticwebassets.pack.json
 /Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/obj/Debug/net8.0/scopedcss/Components/Layout/MainLayout.razor.rz.scp.css
-/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/obj/Debug/net8.0/scopedcss/Components/Layout/NavMenu.razor.rz.scp.css
 /Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/obj/Debug/net8.0/scopedcss/bundle/swiftest_hip_calculator.styles.css
 /Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/obj/Debug/net8.0/scopedcss/projectbundle/swiftest_hip_calculator.bundle.scp.css
 /Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/obj/Debug/net8.0/swiftest_hip_calculator.dll
@@ -27,3 +26,6 @@
 /Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/obj/Debug/net8.0/swiftest_hip_calculator.pdb
 /Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/obj/Debug/net8.0/swiftest_hip_calculator.genruntimeconfig.cache
 /Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/obj/Debug/net8.0/ref/swiftest_hip_calculator.dll
+/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/obj/Debug/net8.0/swiftest_hip_calculator.sourcelink.json
+/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/obj/Debug/net8.0/swiftest_hip_calculator.RazorAssemblyInfo.cache
+/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/obj/Debug/net8.0/swiftest_hip_calculator.RazorAssemblyInfo.cs

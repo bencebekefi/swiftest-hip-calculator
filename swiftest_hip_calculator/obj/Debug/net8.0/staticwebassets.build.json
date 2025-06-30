@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mER/VW6wiGuTPuluf7n8xuqItKzSqEd3Pztkzq3fDv8=",
+  "Hash": "48ERV783E9BakBPjMnlRWg1IcH6RnoeMD6LM6sfmw7Y=",
   "Source": "swiftest_hip_calculator",
   "BasePath": "_content/swiftest_hip_calculator",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.png"
+    },
+    {
+      "Identity": "/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/wwwroot/Images/swiftest_logo2.png",
+      "SourceId": "swiftest_hip_calculator",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/wwwroot/",
+      "BasePath": "_content/swiftest_hip_calculator",
+      "RelativePath": "Images/swiftest_logo2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Images/swiftest_logo2.png"
     }
   ]
 }

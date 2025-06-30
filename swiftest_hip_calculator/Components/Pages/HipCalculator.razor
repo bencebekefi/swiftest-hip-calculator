@@ -1,34 +1,45 @@
 @page "/hipcalc"
 
-<h3>Hip Roof Length Calculator</h3>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="text-center mb-4">Hip Roof Length Calculator</h3>
 
-<div class="form-group">
-    <label>Building Width (m):</label>
-    <input type="number" @bind="Width" class="form-control" />
+                    <div class="form-group mb-3">
+                        <label>Building Width (m):</label>
+                        <input type="number" @bind="Width" class="form-control" />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label>Roof Span (m):</label>
+                        <input type="number" @bind="Run" class="form-control" />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label>Main Roof Pitch (°):</label>
+                        <input type="number" @bind="FrontBackPitch" class="form-control" />
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label>Hip-End Pitch (°):</label>
+                        <input type="number" @bind="HipEndPitch" class="form-control" />
+                    </div>
+
+                    <button class="btn btn-primary w-100" @onclick="CalculateHipLength">Calculate</button>
+
+                    @if (HipLength > 0)
+                    {
+                        <div class="alert alert-success mt-4 text-center">
+                            <strong>Hip Length:</strong> @($"{HipLength:F2} m")
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-
-<div class="form-group">
-    <label>Roof Run (m):</label>
-    <input type="number" @bind="Run" class="form-control" />
-</div>
-
-<div class="form-group">
-    <label>Main Roof Pitch (°):</label>
-    <input type="number" @bind="FrontBackPitch" class="form-control" />
-</div>
-
-<div class="form-group">
-    <label>Hip-End Pitch (°):</label>
-    <input type="number" @bind="HipEndPitch" class="form-control" />
-</div>
-
-<button class="btn btn-primary mt-2" @onclick="CalculateHipLength">Calculate</button>
-
-@if (HipLength > 0)
-{
-    <p class="mt-3"><strong>Hip Length:</strong> @($"{HipLength:F2} m")</p>
-
-}
 
 @code {
     private double Width;

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets/swiftest_hip_calculator.bundle.scp.css"
     },
     {
+      "Id": "/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/wwwroot/Images/swiftest_logo2.png",
+      "PackagePath": "staticwebassets/Images/swiftest_logo2.png"
+    },
+    {
       "Id": "/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/wwwroot/app.css",
       "PackagePath": "staticwebassets/app.css"
     },

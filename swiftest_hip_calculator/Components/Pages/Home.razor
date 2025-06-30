@@ -1,7 +1,44 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<div class="container mt-5">
+    <div class="text-center mb-4">
+        <!-- Swiftest Logo -->
+        <img src="Images/swiftest_logo2.png" alt="Swiftest Logo" style="max-width: 190px;" class="mb-3" />
+        <p class="text-muted">Your all-in-one roofing calculation toolkit</p>
+    </div>
 
-<h1>Hello, world!</h1>
+    <div class="row g-4 justify-content-center">
+        <!-- Hip Calculator Card -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow border-0">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-semibold">Hip Length Calculator</h5>
+                    <p class="card-text">Calculate the length of a hip rafter for a hip-to-hip roof based on dimensions and pitches.</p>
+                    <a href="/hipcalc" class="btn btn-primary mt-auto">Try It</a>
+                </div>
+            </div>
+        </div>
 
-Welcome to your new app.
+        <!-- Roof Area Estimator Card -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow border-0">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-semibold">Roof Area Estimator</h5>
+                    <p class="card-text">Coming soon – calculate the area of different roof types.</p>
+                    <button class="btn btn-secondary mt-auto" disabled>Coming Soon</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Material Estimator Card -->
+        <div class="col-md-4">
+            <div class="card h-100 shadow border-0">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title fw-semibold">Material Estimator</h5>
+                    <p class="card-text">Coming soon – estimate tiles, underlayment, and fasteners based on roof specs and area.</p>
+                    <button class="btn btn-secondary mt-auto" disabled>Coming Soon</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
