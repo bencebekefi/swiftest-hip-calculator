@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("swiftest_hip_calculator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3413f89046c4e802afcd3cd557d6751ef6c38662")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a846d02d1cd68027ff1d99cdc84db2b54c3f3b87")]
 [assembly: System.Reflection.AssemblyProductAttribute("swiftest_hip_calculator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("swiftest_hip_calculator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

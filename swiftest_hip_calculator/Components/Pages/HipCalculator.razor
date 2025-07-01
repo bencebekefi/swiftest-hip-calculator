@@ -43,7 +43,7 @@
             <div class="bg-white p-4 rounded shadow-sm border">
                 <h4>What’s a Hip Roof?</h4>
                 <p>
-                    A hip roof slopes down on all four sides, creating a pyramid-like shape. 
+                    A hip roof slopes down on all four sides. 
                     It’s commonly seen in both residential and commercial buildings.
                 </p>
                 <img src="Images/hip_roof_diagram.png" class="img-fluid mt-3" alt="Hip Roof Diagram" />
@@ -152,38 +152,59 @@
     </div>
 </div>
 @code {
-    private double Width;
-    private double Run;
+    private double Width;           
+    private double Run;             
     private double FrontBackPitch;
-    private double HipEndPitch;
+    private double HipEndPitch;    
     private double HipLength;
 
     private void CalculateHipLength()
     {
-        // Basic input validation
-        if (Width <= 0 || Run <= 0 || FrontBackPitch <= 0 || HipEndPitch <= 0)
+        // Validate inputs
+        if (Width <= 0 || Run <= 0 
+                       || FrontBackPitch <= 0 || HipEndPitch <= 0)
         {
             HipLength = 0;
             return;
         }
 
-        // Use half dimensions from center to corner
-        double halfWidth = Width / 2;
-        double halfRun = Run / 2;
+        // Half‐width from center to eave
+        double halfWidth = Width / 2.0;
 
-        // Plan diagonal (horizontal distance from center to corner)
-        double planDiagonal = Math.Sqrt(Math.Pow(halfWidth, 2) + Math.Pow(halfRun, 2));
+        // Convert pitches to radians
+        double mainRad = DegreesToRadians(FrontBackPitch);
+        double hipRad  = DegreesToRadians(HipEndPitch);
 
-        // Calculate rise from both slopes
-        double riseMain = halfRun * Math.Tan(DegreesToRadians(FrontBackPitch));
-        double riseHip = halfWidth * Math.Tan(DegreesToRadians(HipEndPitch));
-        double averageRise = (riseMain + riseHip) / 2;
+        // Rise of the main roof up to ridge
+        double rise = halfWidth * Math.Tan(mainRad);
+        
+        // where hip plane meets the ridge 
+        double halfRunOffset = rise / Math.Tan(hipRad);
+        
+        if (halfRunOffset * 2.0 >= Run)
+        {
+            HipLength = 0;
+            return;
+        }
 
-        // Final length of the hip rafter
-        HipLength = Math.Sqrt(Math.Pow(planDiagonal, 2) + Math.Pow(averageRise, 2));
+        // Plan diagonal from corner to ridge end
+        double planDiagonal = Math.Sqrt(
+            (halfWidth * halfWidth) +
+            (halfRunOffset * halfRunOffset)
+        );
+
+        // True 3D length of the hip rafter
+        HipLength = Math.Sqrt(
+            (planDiagonal * planDiagonal) +
+            (rise * rise)
+        );
     }
 
-    private double DegreesToRadians(double degrees) => degrees * (Math.PI / 180);
+    private double DegreesToRadians(double degrees)
+    {
+        return degrees * (Math.PI / 180.0);
+    }
+
 }
 
 
