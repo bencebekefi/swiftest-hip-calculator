@@ -1,0 +1,7 @@
+/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/out/swiftest_hip_calculator
+/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/out/appsettings.Development.json
+/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/out/appsettings.json
+/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/out/swiftest_hip_calculator.dll
+/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/out/swiftest_hip_calculator.deps.json
+/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/out/swiftest_hip_calculator.runtimeconfig.json
+/Users/bencebekefi/Desktop/Swiftest/swiftest-hip-calculator/swiftest_hip_calculator/out/swiftest_hip_calculator.pdb

@@ -1,0 +1,115 @@
+/* Base Reset & Fonts */
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: #333;
+}
+
+p {
+    color: #555;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    background-color: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #C62828;
+    box-shadow: 0 0 0 3px rgba(198, 40, 40, 0.2);
+}
+
+/* Buttons */
+button,
+.btn {
+    background-color: #C62828;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+button:hover,
+.btn:hover {
+    background-color: #a32020;
+    transform: scale(1.03);
+}
+
+button:active,
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* Responsive Container */
+.centered-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* Output Text */
+.result-output {
+    font-size: 18px;
+    color: #222;
+    margin-top: 25px;
+    font-weight: bold;
+}
+.custom-navbar {
+    height: 80px;
+    padding: 0 2rem;
+}
+
+.navbar-brand img {
+    display: inline-block;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    padding-top: 0.25rem;
+}
+
+.nav-link:hover {
+    color: #e60073;
+}
+
+.info-icon:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+}

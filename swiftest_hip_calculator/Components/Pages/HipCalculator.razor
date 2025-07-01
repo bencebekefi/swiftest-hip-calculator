@@ -38,7 +38,7 @@
 
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <!-- Info Section (now on the left) -->
+        <!-- Info Section -->
         <div class="col-md-6 col-lg-5 mb-4 mb-lg-0">
             <div class="bg-white p-4 rounded shadow-sm border">
                 <h4>What’s a Hip Roof?</h4>
@@ -48,12 +48,12 @@
                 </p>
                 <img src="Images/hip_roof_diagram.png" class="img-fluid mt-3" alt="Hip Roof Diagram" />
                 <p>
-                    This calculator determines the <strong>hip rafter length</strong> — the diagonal ridge that connects the roof corner to the peak. 
+                    This calculator determines the <strong>hip rafter lenght</strong> — the diagonal ridge that connects the roof corner to the peak. 
                     The result is based on:
                 </p>
                 <ul>
-                    <li><strong>Roof Width</strong>: the shorter side (hip-to-hip direction)</li>
-                    <li><strong>Span (Run)</strong>: the horizontal distance from the edge to the peak</li>
+                    <li><strong>Roof Span</strong>: the shorter side (hip-to-hip direction)</li>
+                    <li><strong>Lenght (Run)</strong>: the longer side from one end to the other.</li>
                     <li><strong>Main Pitch</strong> and <strong>Hip-End Pitch</strong>: slope angles in degrees</li>
                 </ul>
                 <p>
@@ -63,7 +63,7 @@
             </div>
         </div>
 
-        <!-- Calculator Section (now on the right) -->
+        <!-- Calculator Section -->
         <div class="col-md-6 col-lg-5">
             <div class="card shadow-sm">
                 <div class="card-body">
@@ -71,7 +71,7 @@
 
                     <div class="form-group mb-3">
                         <label>
-                            Roof Width (m):
+                            Roof Span (m):
                             <img src="Images/information.jpeg" class="ms-2" style="width: 36px; cursor: pointer;" alt="Info" onclick="openModal('widthModal')" />
                         </label>
                         <input type="number" @bind="Width" class="form-control" />
@@ -79,7 +79,7 @@
 
                     <div class="form-group mb-3">
                         <label>
-                            Roof Span (m):
+                            Roof Lenght (m):
                             <img src="Images/information.jpeg" class="ms-2" style="width: 36px; cursor: pointer;" alt="Info" onclick="openModal('spanModal')" />
                         </label>
                         <input type="number" @bind="Run" class="form-control" />
@@ -119,18 +119,18 @@
 <div id="widthModal" class="custom-modal">
     <div class="custom-modal-content">
         <span class="close-btn" onclick="closeModal('widthModal')">&times;</span>
-        <h5>Roof Width</h5>
-        <p>This is the total width of the roof across the shorter side (hip-to-hip direction).</p>
-        <img src="Images/width_diagram.png" class="img-fluid mt-2" alt="Width" />
+        <h5>Roof Span</h5>
+        <p>This is the total span of the roof across the shorter side (hip-to-hip direction).</p>
+        <img src="Images/roof_span_diagram.png" class="img-fluid mt-2" alt="Width" />
     </div>
 </div>
 
 <div id="spanModal" class="custom-modal">
     <div class="custom-modal-content">
         <span class="close-btn" onclick="closeModal('spanModal')">&times;</span>
-        <h5>Roof Span (Run)</h5>
-        <p>The distance from the edge of the roof to the ridge (centerline). Also known as the run.</p>
-        <img src="Images/span_diagram.png" class="img-fluid mt-2" alt="Span" />
+        <h5>Roof Lenght</h5>
+        <p>Roof length is the horizontal distance across the building from one end of the roof to the other.</p>
+        <img src="Images/roof_lenght_diagram.png" class="img-fluid mt-2" alt="Span" />
     </div>
 </div>
 
@@ -151,7 +151,6 @@
         <img src="Images/hip_pitch_diagram.png" class="img-fluid mt-2" alt="Hip Pitch" />
     </div>
 </div>
-
 @code {
     private double Width;
     private double Run;
@@ -161,13 +160,32 @@
 
     private void CalculateHipLength()
     {
+        // Basic input validation
+        if (Width <= 0 || Run <= 0 || FrontBackPitch <= 0 || HipEndPitch <= 0)
+        {
+            HipLength = 0;
+            return;
+        }
+
+        // Use half dimensions from center to corner
         double halfWidth = Width / 2;
-        double rise = Run * Math.Tan(DegreesToRadians(FrontBackPitch));
-        HipLength = Math.Sqrt(Math.Pow(halfWidth, 2) + Math.Pow(Run, 2) + Math.Pow(rise, 2));
+        double halfRun = Run / 2;
+
+        // Plan diagonal (horizontal distance from center to corner)
+        double planDiagonal = Math.Sqrt(Math.Pow(halfWidth, 2) + Math.Pow(halfRun, 2));
+
+        // Calculate rise from both slopes
+        double riseMain = halfRun * Math.Tan(DegreesToRadians(FrontBackPitch));
+        double riseHip = halfWidth * Math.Tan(DegreesToRadians(HipEndPitch));
+        double averageRise = (riseMain + riseHip) / 2;
+
+        // Final length of the hip rafter
+        HipLength = Math.Sqrt(Math.Pow(planDiagonal, 2) + Math.Pow(averageRise, 2));
     }
 
     private double DegreesToRadians(double degrees) => degrees * (Math.PI / 180);
 }
+
 
 <!-- JS Modal Logic -->
 <script>

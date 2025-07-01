@@ -8,21 +8,20 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
+        // Dynamically bind to the Azure-provided port
+        var port = Environment.GetEnvironmentVariable("PORT") ?? "80";
+        builder.WebHost.UseUrls($"http://0.0.0.0:{port}");
+
         builder.Services.AddRazorComponents()
             .AddInteractiveServerComponents();
 
         var app = builder.Build();
 
-        // Configure the HTTP request pipeline.
         if (!app.Environment.IsDevelopment())
         {
             app.UseExceptionHandler("/Error");
-            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
             app.UseHsts();
         }
-
-        app.UseHttpsRedirection();
 
         app.UseStaticFiles();
         app.UseAntiforgery();
