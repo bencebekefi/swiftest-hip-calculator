@@ -6,11 +6,11 @@
 
 ## Core Features
 
-- ** 3D Trigonometric Calculation**  
+- **3D Trigonometric Calculation**  
   Calculates the hip length where a 35° hip-end meets 45° front/back slopes using building width and run.
 
 - **Interactive Form UI**  
-  Clean, responsive form elements with real-time calculation output.
+  Clean, responsive form elements with calculation output error handling and modals for addittional information.
 
 - **Polished Visual Design**  
   Styled with Bootstrap and custom CSS for a modern, professional feel.
